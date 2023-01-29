@@ -17,56 +17,20 @@
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-    <style>
-        body {
-            padding: 2em;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <h1>Fake People</h1>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <h1 class="header">Fake People</h1>
     <div class="container" style="padding-top: 1em; padding-left: 3em" id="people">
 
     </div>
 
-    <script>
-        var statusItem = document.querySelector("p#status");
-            var peopleList = document.querySelector("#people");
-      document.addEventListener('DOMContentLoaded', function() {
-        try {
-          let app = firebase.app();
-          let features = [
-            'database',
-            'storage'
-          ].filter(feature => typeof app[feature] === 'function');
+    <script src="js/main.js">
 
 
-        } catch (e) {
-          console.error(e);
-        }
-          var database = firebase.database();
-          var rootRef = database.ref('/');
-          console.log(peopleList)
-          rootRef.once('value', function(snapshot){
-              snapshot.forEach(function(d) {
-                  var v = d.val();
-                  peopleList.innerHTML += `<div style="margin-bottom: 7em">
-                                                 <h3 class="card-header">${v.firstName} ${v.lastName}</h3>
-                                                 <h4>Gender:</h4>
-                                                 <p>${v.gender}</p>
-                                                 <h4>Age:</h4>
-                                                 <p>${v.age}</p>
-                                                 <h4>Current Country of Residence:</h4>
-                                                 <p>${v.country}</p>
-                                                 <h4>Job:</h4>
-                                                 <p>${v.job}</p>
-                                                 <h4>Bio:</h4>
-                                                 <p>${v.bio}</p>
-                                		         </div>`;
-                  console.log(d.val());
-              });
-          });
-      });
     </script>
   </body>
 </html>
