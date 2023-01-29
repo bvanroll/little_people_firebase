@@ -1,0 +1,54 @@
+body {
+    padding: 2em;
+}
+.header {
+    font-size: 4em;
+}
+.card {margin-bottom: 7em;
+    width: 80%;
+    overflow: hidden; /* will contain if #first is longer than #second */
+    border: 1px;
+    border-style: outset;
+    padding: .3em;
+}
+.pfp {width: 40%; max-width: 45%; float:left; height: 20em;margin: 2em;}
+.person {max-width: 45%;overflow: hidden; max-height: 29em;margin: 2em;}
+.bio {padding: .3em; margin: .5em}
+.name {
+    font-size: 2em;
+}
+.picture {
+    max-width: 80%;
+}
+.bio-item {
+    font-size: 1.3em;
+}
+.item-content {
+    font-size: 1em;
+}
+@media only screen and (max-width: 600px) {
+    .header {
+        text-align: center;
+    }
+    .card {
+        padding: 0em;
+        width: 90%;
+    }
+    .pfp {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        height: auto;
+        float: none;
+    }
+    .picture {
+        max-width: 100%;
+    }
+    .person {
+        max-width: 90%;
+        width: 90%;
+        margin: 0;
+        padding: 1em;
+        float: none;
+    }
+}
